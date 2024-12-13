@@ -1,0 +1,6 @@
+/* Maak alle afbeeldingen consistent */
+.gallery-img {
+    width: 100%; /* Volledige breedte van de kolom */
+    height: 250px; /* Consistente hoogte */
+    object-fit: cover; /* Snijdt afbeelding passend bij de container */
+}

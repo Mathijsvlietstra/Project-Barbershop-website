@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #reviews {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            margin: auto;
+        }
+        .review {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        form div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section id="reviews">
+        <h2>Reviews</h2>
+
+        <div class="review">
+            <p><strong>Een Anonieme bezoeker</strong></p>
+            <p>Leuk hoor, ben hier met mijn man naartoe geweest. de kapper was goed, de snacks waren lekker. enige probleem was dat er niet zo goed te parkeren valt.</p>
+            <p>Rating: ★★★★☆</p>
+        </div>
+
+        <div class="review">
+            <p><strong>Gerda jansen</strong></p>
+            <p>Goede kapper hoor, en dat met wat eten en drinken erbij, ik houd niet zo veel van alcohol en gelukkig hebben ze veel andere dingen om te drinken. hier maken ze van de kapper een echte ervaring. </p>
+            <p>Rating: ★★★★★</p>
+        </div>
+
+        <div class="review">
+            <p><strong>Een anonieme bezoeker</strong></p>
+            <p>Erg vriendelijke staff hier, ik heb een leuke tijd gehad met mijn gezin, voor de volwassenen is er een 'volwassen drankje' en voor de kinderen wat lekker limonade anders. en de snacks zijn heerlijk. 5 sterren van mij!</p>
+            <p>Rating: ★★★★★</p>
+        </div>
+
+        <!-- hieronder code om reviews toe te voegen -->
+        <form action="/submit-review" method="post">
+            <div>
+                <label for="review-name">Name:</label>
+                <input type="text" id="review-name" name="review-name" placeholder="Your Name" required>
+            </div>
+            <div>
+                <label for="review-message">Review:</label>
+                <textarea id="review-message" name="review-message" rows="4" placeholder="Write your review here" required></textarea>
+            </div>
+            <div>
+                <label for="review-stars">Beoordeling</label>
+                <select id="review-stars" name="review-stars" required>
+                    <option value="1">★☆☆☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="5">★★★★★</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Review Plaatsen</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

@@ -5,67 +5,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* General Styles */
+        html, body {
             margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure the body covers the entire viewport */
             font-family: Arial, sans-serif;
+            color: #333;
         }
+
+        body {
+            background: url('img/rev-background.jpg') no-repeat center center fixed; /* Full background */
+            background-size: cover; /* Ensure the image covers the entire screen */
+            position: relative; /* For stacking context */
+        }
+
+        /* Top Bar */
+        #top-bar {
+            background-color: #444; /* Dark gray for the top bar */
+            color: #fff; /* White text for contrast */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            z-index: 1; /* Ensure it stays above the background */
+        }
+
+        #top-bar img {
+            height: 40px;
+        }
+
+        #top-bar h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        /* Reviews Section */
         #reviews {
             text-align: center;
             max-width: 600px;
             width: 100%;
-            margin: auto;
+            margin: 80px auto 20px; /* Add margin to avoid overlapping with the top bar */
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 2; /* Ensure it stays above the background */
+            position: relative; /* For stacking context */
         }
-        .review {
+
+        h2 {
+            color: #444;
             margin-bottom: 20px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 10px;
         }
+
+        .review {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .review strong {
+            color: #555;
+        }
+
+        /* Form Styles */
         form {
             margin-top: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
         }
+
         form div {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #888;
+            outline: none;
+        }
+
+        button {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #444;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer .footer-section {
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        footer .social-icons img {
+            height: 20px;
+            margin: 0 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #reviews {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Top Bar -->
+    <div id="top-bar">
+     <center>
+        <img src="img/logo.png" alt="Logo" id="logo">
+        <h1>Reviews</h1>
+    </center>
+    </div>
+
     <section id="reviews">
         <h2>Reviews</h2>
 
         <div class="review">
-            <p><strong>Een Anonieme bezoeker</strong></p>
-            <p>Leuk hoor, ben hier met mijn man naartoe geweest. de kapper was goed, de snacks waren lekker. enige probleem was dat er niet zo goed te parkeren valt.</p>
+            <p><strong>Een Anonieme Bezoeker</strong></p>
+            <p>Leuk hoor, ben hier met mijn man naartoe geweest. De kapper was goed, de snacks waren lekker. Enige probleem was dat er niet zo goed te parkeren valt.</p>
             <p>Rating: ★★★★☆</p>
         </div>
 
         <div class="review">
-            <p><strong>Gerda jansen</strong></p>
-            <p>Goede kapper hoor, en dat met wat eten en drinken erbij, ik houd niet zo veel van alcohol en gelukkig hebben ze veel andere dingen om te drinken. hier maken ze van de kapper een echte ervaring. </p>
+            <p><strong>Gerda Jansen</strong></p>
+            <p>Goede kapper hoor, en dat met wat eten en drinken erbij. Ik houd niet zo veel van alcohol en gelukkig hebben ze veel andere dingen om te drinken. Hier maken ze van de kapper een echte ervaring.</p>
             <p>Rating: ★★★★★</p>
         </div>
 
         <div class="review">
-            <p><strong>Een anonieme bezoeker</strong></p>
-            <p>Erg vriendelijke staff hier, ik heb een leuke tijd gehad met mijn gezin, voor de volwassenen is er een 'volwassen drankje' en voor de kinderen wat lekker limonade anders. en de snacks zijn heerlijk. 5 sterren van mij!</p>
+            <p><strong>Een Anonieme Bezoeker</strong></p>
+            <p>Erg vriendelijke staff hier, ik heb een leuke tijd gehad met mijn gezin. Voor de volwassenen is er een 'volwassen drankje' en voor de kinderen wat lekkere limonade. En de snacks zijn heerlijk. 5 sterren van mij!</p>
             <p>Rating: ★★★★★</p>
         </div>
 
-        <!-- hieronder code om reviews toe te voegen -->
+        <!-- Form for adding reviews -->
         <form action="/submit-review" method="post">
             <div>
-                <label for="review-name">Name:</label>
-                <input type="text" id="review-name" name="review-name" placeholder="Your Name" required>
+                <label for="review-name">Naam:</label>
+                <input type="text" id="review-name" name="review-name" placeholder="Uw Naam" required>
             </div>
             <div>
-                <label for="review-message">Review:</label>
-                <textarea id="review-message" name="review-message" rows="4" placeholder="Write your review here" required></textarea>
+                <label for="review-message">Recensie:</label>
+                <textarea id="review-message" name="review-message" rows="4" placeholder="Schrijf hier uw recensie" required></textarea>
             </div>
             <div>
-                <label for="review-stars">Beoordeling</label>
+                <label for="review-stars">Beoordeling:</label>
                 <select id="review-stars" name="review-stars" required>
                     <option value="1">★☆☆☆☆</option>
                     <option value="2">★★☆☆☆</option>
@@ -79,5 +210,24 @@
             </div>
         </form>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <p><strong>Contact Us</strong></p>
+            <a href="mailto:support@business.com">support@business.com</a> | +31 123 456 789
+        </div>
+        <div class="footer-section">
+            <p><strong>Customer Support</strong></p>
+            <a href="#">FAQ</a> | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-section social-icons">
+            <p><strong>Follow Us</strong></p>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <div>&copy; 2025 Your Business Name. All Rights Reserved.</div>
+    </footer>
 </body>
 </html>
